@@ -25,8 +25,8 @@
 3. joystick launch file 실행
 > roslaunch open_manipulator_pro_teleop open_manipulator_pro_teleop_joystick.launch with_gripper:=true
 
-![picture1][./image/picture1.png]
-![picture2][./image/picture2.png]
+![picture1](https://github.com/YDK18/OM_pro_joystick/image/picture1.png)
+
 
 ## 2. Moveit!
 
