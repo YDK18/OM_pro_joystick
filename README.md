@@ -25,9 +25,9 @@
 3. joystick launch file 실행
 > roslaunch open_manipulator_pro_teleop open_manipulator_pro_teleop_joystick.launch with_gripper:=true
 
-![picture1](https://github.com/YDK18/OM_pro_joystick/image/picture1.png)
+![picture1](https://github.com/YDK18/OM_pro_joystick/blob/master/image/picture1.png)
 
-
+![Gazebo world with nuclear disaster](https://github.com/Fred159/aecobot/blob/master/scene.png)
 ## 2. Moveit!
 
 1. U2D2 권한 설정
