@@ -96,6 +96,10 @@ if (msg->buttons.at(0) == 1)
   else if (msg->buttons.at(5) == 1) setGoal("init");
   else if (msg->buttons.at(2) == 1) setGoal("joint6-");
   else if (msg->buttons.at(3) == 1) setGoal("joint6+");
+  else if (msg->buttons.at(6) == 1) setGoal("joint1-");
+  else if (msg->buttons.at(7) == 1) setGoal("joint1+");
+  else if (msg->buttons.at(8) == 1) setGoal("joint5-");
+  else if (msg->buttons.at(9) == 1) setGoal("joint5+");
 
   if (with_gripper_)
   {
@@ -284,6 +288,55 @@ void OpenManipulatorTeleop::setGoal(const char* str)
     joint_name.push_back("joint6"); goalJoint.at(5) = -JOINT_DELTA;
     setJointSpacePathFromPresent(joint_name, goalJoint, PATH_TIME);
   }
+  else if(str == "joint1+")
+  {
+    printf("input : r \tincrease(++) joint 1 angle\n");
+    std::vector<std::string> joint_name;
+    joint_name.push_back("joint1"); goalJoint.at(0) = JOINT_DELTA;
+    joint_name.push_back("joint2");
+    joint_name.push_back("joint3");
+    joint_name.push_back("joint4");
+    joint_name.push_back("joint5");
+    joint_name.push_back("joint6");
+    setJointSpacePathFromPresent(joint_name, goalJoint, PATH_TIME);
+  }
+  else if(str == "joint1-")
+  {
+    printf("input : f \tdecrease(--) joint 1 angle\n");
+    std::vector<std::string> joint_name;
+    joint_name.push_back("joint1"); goalJoint.at(0) = -JOINT_DELTA;
+    joint_name.push_back("joint2");
+    joint_name.push_back("joint3");
+    joint_name.push_back("joint4");
+    joint_name.push_back("joint5");
+    joint_name.push_back("joint6");
+    setJointSpacePathFromPresent(joint_name, goalJoint, PATH_TIME);
+  }
+  else if(str == "joint5+")
+  {
+    printf("input : i \tincrease(++) joint 5 angle\n");
+    std::vector<std::string> joint_name;
+    joint_name.push_back("joint1");
+    joint_name.push_back("joint2");
+    joint_name.push_back("joint3");
+    joint_name.push_back("joint4");
+    joint_name.push_back("joint5"); goalJoint.at(4) = JOINT_DELTA;
+    joint_name.push_back("joint6");
+    setJointSpacePathFromPresent(joint_name, goalJoint, PATH_TIME);
+  }
+  else if(str == "joint5-")
+  {
+    printf("input : k \tdecrease(--) joint 5 angle\n");
+    std::vector<std::string> joint_name;
+    joint_name.push_back("joint1");
+    joint_name.push_back("joint2");
+    joint_name.push_back("joint3");
+    joint_name.push_back("joint4");
+    joint_name.push_back("joint5"); goalJoint.at(4) = -JOINT_DELTA;
+    joint_name.push_back("joint6");
+    setJointSpacePathFromPresent(joint_name, goalJoint, PATH_TIME);
+  }
+
 }
 
 int main(int argc, char **argv)
