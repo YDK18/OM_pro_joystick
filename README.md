@@ -42,7 +42,7 @@
 
 > roslaunch open_manipulator_pro_teleop teleop_joystick.launch
 
-![joystick_number](http://203.250.84.240:10080/deukgyeong/manipulator/blob/master/image/picture3.png)
+![joystick_number](https://github.com/YDK18/OM_pro_joystick/blob/master/image/picture3.png)
 
 ## 2. Moveit!
 
